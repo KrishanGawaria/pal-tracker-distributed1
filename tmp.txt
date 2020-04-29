@@ -1,0 +1,80 @@
+Getting env variables for app tracker-allocations in org DellEMC_PAL / space Vethaprasath_Vasudev@Dell.com as vethaprasath_vasudev@dell.com...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "cleardb": [
+   {
+    "binding_name": null,
+    "credentials": {
+     "hostname": "us-cdbr-iron-east-01.cleardb.net",
+     "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/ad_8448d7dcb98107d?user=b6b34488c20ef6\u0026password=bd363d9d",
+     "name": "ad_8448d7dcb98107d",
+     "password": "bd363d9d",
+     "port": "3306",
+     "uri": "mysql://b6b34488c20ef6:bd363d9d@us-cdbr-iron-east-01.cleardb.net:3306/ad_8448d7dcb98107d?reconnect=true",
+     "username": "b6b34488c20ef6"
+    },
+    "instance_name": "tracker-allocations-database",
+    "label": "cleardb",
+    "name": "tracker-allocations-database",
+    "plan": "spark",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "Data Stores",
+     "Cloud Databases",
+     "Developer Tools",
+     "Web-based",
+     "Data Store",
+     "Online Backup \u0026 Storage",
+     "Development and Test Tools",
+     "Single Sign-On",
+     "Buyable",
+     "relational",
+     "mysql",
+     "Cloud Security and Monitoring"
+    ],
+    "volume_mounts": []
+   }
+  ]
+ }
+}
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "03a06fc1-ba9f-40ba-9fe9-0e73e575cc12",
+  "application_name": "tracker-allocations",
+  "application_uris": [
+   "allocations-pal-Alpha.cfapps.io"
+  ],
+  "application_version": "519be208-e5fc-4386-aa1f-514afc6bb2a5",
+  "cf_api": "https://api.run.pivotal.io",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 256
+  },
+  "name": "tracker-allocations",
+  "organization_id": "29348a3c-2081-4080-b524-e2bf92abe76b",
+  "organization_name": "DellEMC_PAL",
+  "process_id": "03a06fc1-ba9f-40ba-9fe9-0e73e575cc12",
+  "process_type": "web",
+  "space_id": "fcc5aebc-1033-48ff-8e22-87812722cd6e",
+  "space_name": "Vethaprasath_Vasudev@Dell.com",
+  "uris": [
+   "allocations-pal-Alpha.cfapps.io"
+  ],
+  "users": null,
+  "version": "519be208-e5fc-4386-aa1f-514afc6bb2a5"
+ }
+}
+
+User-Provided:
+REGISTRATION_SERVER_ENDPOINT: http://registration-pal-Alpha.cfapps.io
+
+No running env variables have been set
+
+No staging env variables have been set
+
