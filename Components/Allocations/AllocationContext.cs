@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+
 namespace Allocations
 {
     public class AllocationContext : DbContext
