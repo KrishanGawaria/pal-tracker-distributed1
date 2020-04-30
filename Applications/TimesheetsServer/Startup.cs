@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Steeltoe.CloudFoundry.Connector.MySql.EFCore;
 using Timesheets;
+using Steeltoe.Discovery.Client;
+using Steeltoe.Common.Discovery;
 
 namespace TimesheetsServer
 {
@@ -22,6 +24,7 @@ namespace TimesheetsServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDiscoveryClient(Configuration);
             services.AddLogging(loggingBuilder =>
             {
                 loggingBuilder.AddConsole();
@@ -36,7 +39,8 @@ namespace TimesheetsServer
             
             services.AddSingleton<IProjectClient>(sp =>
             {
-                var httpClient = new HttpClient
+                var handler = new DiscoveryHttpClientHandler(sp.GetService<IDiscoveryClient>());
+                var httpClient = new HttpClient(handler, false) 
                 {
                     BaseAddress = new Uri(Configuration.GetValue<string>("REGISTRATION_SERVER_ENDPOINT"))
                 };
@@ -49,6 +53,7 @@ namespace TimesheetsServer
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseMvc();
+            app.UseDiscoveryClient();
         }
     }
 }
